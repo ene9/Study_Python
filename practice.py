@@ -1,9 +1,15 @@
-print(1 != 3) # 등호 두개(==)는 같다. 느낌표와 등호(!=)는 같지 않다.
-print(not(1 != 3)) # not : 뒤에 있는 값의 반대 
+# print를 이용해서 수식이 가능하다.
 
-print((3 > 0) and (3 < 5) ) # True 두개 모두 true이어야함.  AND(&)연산
-print((3 > 0) & (3 < 5)) # 위의 코드와 같음. 
+number = 2 + 3 * 4 # number라는 변수 생성
+print(number)
+number = number + 2 
+print(number) # 16
+number -= 4
+print(number) # 12
+number *= 4 
+print(number) # 48
+number /= 8
+print(number) # 6
 
-print((3 > 0) or (3 > 5)) # True 둘 중 하나라도 true면 모두 true.  OR(|)연산
-print((3 > 0) | (3 > 5)) # True
-print((3 < 0) | (3 > 5)) # 두개 모두 false니까 결과도 따라서 False
+number %= 5 # 나머지 연산도 가능
+print(number)
