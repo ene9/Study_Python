@@ -53,6 +53,7 @@ print(num_list)
 
 
 #   [ 2. 사전 ]
+
 # 사전에서 단어를 찾으면 그 단어와 그 단어에 대한 정의가 나옴
 # 키에 대한 중복이 허용되지 않음
 # key 하나 당 value가 주어짐
@@ -105,6 +106,7 @@ print(cabinet)  # {}
 
 
 #   [ 3. 튜플 ]
+
 # 튜플은 리스트와는 다르게 내용 변경이나 추가를 할 수 없음
 # 리스트보다는 할게 많지 않은데, 속도가 빠름
 # 리스트 : 변경되는 목록,  튜플 : 변경되지 않는 목록
@@ -118,3 +120,53 @@ print(menu[1])  # 치즈까스
 # 소괄호로 여러개의 변수를 선언
 (name, age, hobby) = ("으네", 22, "코딩")   
 print(name, age, hobby)
+
+
+
+#   [ 4. 집합(set) ]
+
+# 집합 : 중복이 안되고, 순서가 없음
+
+my_set = {1,2,3,3,3}  # 집합은 중복을 허용하지 않음
+print(my_set)  # {1, 2, 3}
+
+java = {"유재석", "김태호", "양세형"}
+python = set(["유재석", "박명수"])  # 또다른 집합의 형태 : 배열을 set로 묶어줌
+
+# 교집합 (즉, java와 python 모두 할 수 있는 사람)
+print(java  & python) # {'유재석'}
+print(java.intersection(python)) # {'유재석'}  intersection : 가운데 부분(두 집합이 겹지는 부분)
+
+# 합집합 (즉, java를 할 수 있거나, python을 할 수 있거나. 둘 중 하나만이라도 할 수 있는 사람)
+print(java | python) # {'유재석', '김태호', '양세형', '박명수'}  - 집합은 순서가 없음
+print(java.union(python)) # union : 합
+
+# 차집합 (java는 할 수 있지만, python은 할 줄 모르는 사람)
+print(java - python) # {'김태호', '양세형'} 
+print(java.difference(python))
+
+# python을 할 줄 아는 사람이 늘어남
+python.add("김태호") # set에 값을 추가
+print(python) # {'유재석', '김태호', '박명수'} + 집합은 순서가 없음
+
+# java를 잊어버림
+java.remove("김태호") # set에서 특정 값을 제거
+print(java) # {'유재석', '양세형'}
+
+
+
+#   [5. 자료구조의 변경]
+
+menu = {"커피", "우유", '주스'}  # 집합은 순서가 없음
+print(menu, type(menu)) # {'커피', '주스', '우유'} <class 'set'>
+
+# menu의 type을 바꿈 ('set' -> 'list')
+menu = list(menu)
+print(menu, type(menu)) # ['커피', '주스', '우유'] <class 'list'>
+
+menu = tuple(menu)  # tuple : list와는 다르게 내용 변경이나 추가를 할 수 없음
+print(menu, type(menu)) # ('커피', '주스', '우유') <class 'tuple'>
+# 각 type에 따라서 출력되는 괄호가 달라짐
+
+menu = set(menu)
+print(menu, type(menu))  # 이렇게 해서 다시 집합(set)형태로 바꿀 수 있음
