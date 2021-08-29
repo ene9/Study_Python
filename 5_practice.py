@@ -121,6 +121,7 @@ print(menu[1])  # 치즈까스
 (name, age, hobby) = ("으네", 22, "코딩")   
 print(name, age, hobby)
 
+# list : 대괄호, set : 중괄호, tuple : 소괄호
 
 
 #   [ 4. 집합(set) ]
